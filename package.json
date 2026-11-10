@@ -1,0 +1,19 @@
+{
+  "name": "desafio-fullstack-liveseo",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm --prefix backend run start:dev",
+    "build": "npm --prefix backend run build && tsc -p exercises/typescript/tsconfig.json",
+    "start": "npm --prefix backend start",
+    "exercise": "tsc -p exercises/typescript/tsconfig.json && node exercises/typescript/dist/demo.js",
+    "test": "npm run build && npm --prefix backend test && node --test exercises/typescript/dist/users.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "~5.9.3"
+  }
+}
