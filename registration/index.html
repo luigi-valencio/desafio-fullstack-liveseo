@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulário de cadastro demonstrativo do desafio Fullstack Júnior LiveSEO.">
+    <title>Cadastro | Desafio LiveSEO</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#name">Pular para o formulário</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Desafio LiveSEO, início">
+        <span class="brand-mark" aria-hidden="true">L.</span>
+        <span>Desafio <strong>LiveSEO</strong></span>
+      </a>
+      <span class="stage">CADASTRO / DEMONSTRAÇÃO</span>
+    </header>
+
+    <main class="layout">
+      <section class="introduction" aria-labelledby="intro-title">
+        <p class="eyebrow"><span aria-hidden="true"></span> SEU PRÓXIMO PASSO</p>
+        <h1 id="intro-title">Todo começo<br>abre <em>possibilidades.</em></h1>
+        <p class="intro-description">Comece pelo essencial. Preencha seus dados e experimente um cadastro simples, do primeiro campo ao último clique.</p>
+        <div class="project-note">
+          <span class="note-number" aria-hidden="true">01</span>
+          <div><p class="note-title">Uma etapa de cada vez.</p><p>Uma demonstração para experimentar, sem criar conta.</p></div>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="form-title">
+        <p class="eyebrow">FORMULÁRIO DE CADASTRO</p>
+        <h2 id="form-title">Vamos começar?</h2>
+        <p class="form-description" id="form-description">Preencha os campos para testar o formulário.<br>Todos são obrigatórios.</p>
+
+        <form id="registration-form" aria-describedby="form-description demo-note">
+          <fieldset id="registration-fields" disabled>
+          <legend class="visually-hidden">Dados para testar o cadastro</legend>
+          <div class="field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Seu nome completo" required maxlength="100" pattern=".*\S.*" title="Informe um nome que não contenha apenas espaços.">
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required maxlength="254">
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Pelo menos 8 caracteres" required minlength="8" maxlength="128" aria-describedby="password-hint">
+            <p class="field-hint" id="password-hint">Use entre 8 e 128 caracteres. Para este teste, use uma senha fictícia.</p>
+          </div>
+          <button type="submit">Enviar cadastro <span aria-hidden="true">↗</span></button>
+          </fieldset>
+          <p id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </form>
+
+        <p class="demo-note" id="demo-note"><strong>Ambiente de demonstração.</strong> Nenhuma conta é criada. Os dados não são enviados nem armazenados pela página.</p>
+        <noscript><p class="noscript-note">Ative o JavaScript para testar o formulário. Os campos e o envio estão desabilitados nesta demonstração.</p></noscript>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>Desafio técnico · Fullstack Júnior</span><span>Interface de demonstração</span></footer>
+
+    <script>
+      const form = document.querySelector('#registration-form');
+      const status = document.querySelector('#form-status');
+      // A validação nativa ocorre antes de submit; nenhum dado é transmitido.
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        form.reset();
+        status.textContent = 'Validação concluída! Esta é uma demonstração: nenhuma conta foi criada. Os campos foram limpos.';
+      });
+      form.addEventListener('input', () => { status.textContent = ''; });
+      // Só habilita a interação depois de instalar a prevenção de envio.
+      document.querySelector('#registration-fields').disabled = false;
+    </script>
+  </body>
+</html>

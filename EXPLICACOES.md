@@ -2,7 +2,17 @@
 
 ## Etapas entregues
 
-Nesta primeira etapa foram implementados os itens 3 (TypeScript), 4 (SQL) e 5 (NestJS). Os itens 1 e 2 estão reservados para os próximos commits.
+Foram implementados os itens 3 (TypeScript), 4 (SQL) e 5 (NestJS) no commit 1, e o item 1 (HTML/CSS) no commit 2. O item 2 (Vue 3) fica para o terceiro commit.
+
+### 1. HTML + CSS
+
+O formulário independente está em `registration/index.html`, com estilos em `registration/styles.css`, preservando a organização planejada. Usei `header`, `main`, `section` e `footer` para separar o conteúdo e uma hierarquia de títulos com `h1` e `h2`. Cada campo tem um `label` associado por `for`/`id`, autocomplete e dicas conectadas por `aria-describedby`.
+
+A validação é nativa: `required` nos três campos, `type="email"` para o e-mail, `pattern` para impedir nome contendo apenas espaços e `minlength="8"`/`maxlength="128"` para a senha. O mínimo da senha é uma decisão deste exercício, não uma regra exigida pelo enunciado. A senha é visualmente oculta com `type="password"`.
+
+O CSS usa variáveis para cores, Grid para o layout de duas colunas e media queries para uma coluna em telas menores. Estilos de foco visível, campos de pelo menos 48 px e um link para pular ao formulário facilitam o uso por teclado. O arquivo tem seções de base, estrutura, apresentação, estados do formulário e responsividade, sem framework ou dependência externa.
+
+Um script inline pequeno intercepta `submit` após a validação nativa, limpa os campos e anuncia a confirmação com `role="status"`. Não faz chamadas à API, não guarda informações e não cria conta. O `fieldset` começa desabilitado e só é habilitado após registrar o interceptador, evitando envio acidental com JavaScript desativado. A interface explica que é uma demonstração e recomenda senha fictícia.
 
 ### 3. TypeScript
 
@@ -36,7 +46,7 @@ O Nest injeta o service no controller. Não há camada de repositório porque a 
 ## 6. Git
 
 Branch da primeira etapa: `feat/commit-1-api-typescript-sql`.
-O primeiro commit fecha API, TypeScript e SQL com suas explicações. O segundo entregará HTML/CSS e o terceiro Vue 3 e revisão final. A separação permite avaliar cada incremento sem fabricar um histórico depois do código final.
+O primeiro commit fecha API, TypeScript e SQL com suas explicações. A branch `feat/commit-2-formulario-html-css` parte dessa primeira etapa e entrega o formulário, os estilos e a documentação de uso. O terceiro commit entregará Vue 3 e revisão final. A separação permite avaliar cada incremento sem fabricar um histórico depois do código final.
 
 ## 7. Organização de projeto
 
@@ -57,7 +67,7 @@ Repetiria a medição nas mesmas condições para confirmar a melhora, sem reduz
 
 ## Uso de Ferramentas de IA
 
-**Ferramenta usada:** Codex, para analisar o enunciado, organizar as etapas e gerar a implementação, documentação e testes da primeira etapa. O histórico desta entrega deve ser atualizado se houver participação adicional de IA.
+**Ferramenta usada:** Codex, para analisar o enunciado, organizar as etapas e gerar a implementação, documentação e testes da primeira etapa, além do formulário HTML/CSS e sua verificação no segundo commit.
 
 **Exemplo concreto:** a IA ajudou a distinguir o exercício SQL da API em memória, evitando uma integração com banco não exigida. Também gerou testes para conferir entradas inválidas e o limite exclusivo de idade (`> 23`).
 
