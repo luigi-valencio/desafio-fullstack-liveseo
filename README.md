@@ -2,7 +2,7 @@
 
 Desafio entregue em três etapas: API NestJS e exercícios TypeScript/SQL; formulário HTML/CSS; lista de tarefas Vue 3 e documentação final. A interface usa o logo original e uma identidade inspirada no [site da liveSEO](https://liveseo.com.br/), consultado em 11/11/2026. Veja a origem dos arquivos em [ASSETS.md](ASSETS.md).
 
-**Entrega completa:** [código na branch do commit 3](https://github.com/luigi-valencio/desafio-fullstack-liveseo/tree/feat/commit-3-vue-documentacao). O histórico dessa branch contém as três etapas.
+**Entrega completa:** [repositório público na branch padrão master](https://github.com/luigi-valencio/desafio-fullstack-liveseo). O histórico preserva os três commits de implementação e o registro posterior da validação SQL.
 
 ## Pré-requisitos
 
@@ -106,6 +106,8 @@ O script cria a tabela e insere dados de exemplo; execute uma vez em banco vazio
 
 Resultados esperados: Maria, Pedro e Ana na consulta por criação; `2024-01: 1` e `2024-02: 2` na contagem mensal. Este exercício é independente da lista em memória da API.
 
+**Execução confirmada:** o arquivo original foi executado em MySQL Community Server 8.4.13, em banco local isolado. Os resultados e os passos para reproduzir estão em [database/VALIDACAO_MYSQL.md](database/VALIDACAO_MYSQL.md).
+
 ## Verificações
 
 ```sh
@@ -114,7 +116,7 @@ npm test
 
 Compila os projetos, testa a API via HTTP com Supertest, executa os testes TypeScript com o runner nativo do Node e testa as operações reativas de tarefas com Vitest. Não requer iniciar a API manualmente. O SQL deve ser executado separadamente em MySQL; o comando acima não testa o SQL.
 
-Validação final automatizada: compilação concluída e 11 testes aprovados (cinco da API, três de TypeScript e três de tarefas). O script SQL foi revisado, mas ainda não executado em MySQL neste ambiente; Docker está instalado, porém seu serviço não está em execução.
+Validação final automatizada: compilação concluída e 11 testes aprovados (cinco da API, três de TypeScript e três de tarefas). Separadamente, o SQL foi executado em MySQL 8.4.13: ordenação, contagem mensal e separação de meses em anos diferentes confirmadas. O servidor temporário foi encerrado após o teste; a API continua independente do banco.
 
 O formulário foi verificado no navegador: campos obrigatórios, e-mail inválido, senha curta, nome apenas com espaços, confirmação com limpeza dos campos, senha oculta e sequência de teclado. O layout também foi inspecionado em desktop e larguras de 375 e 320 px, sem rolagem horizontal. Esses cenários do formulário são verificações manuais.
 
@@ -163,6 +165,8 @@ As pastas previstas no tópico 7 são mantidas. O formulário continua independe
 
 Cada commit representa uma etapa funcional. Branches: `feat/commit-1-api-typescript-sql`, `feat/commit-2-formulario-html-css` e `feat/commit-3-vue-documentacao`, cada uma partindo da anterior.
 
-O repositório permanece privado. Avaliadores precisam de acesso para abrir o código e o histórico.
+A `master` reúne a versão completa e é a branch padrão. Um commit adicional de documentação registra a execução real do SQL e a entrega pública, preservando os três incrementos originais.
+
+O repositório é público: avaliadores podem abrir o código e o histórico pelo link principal, sem convite.
 
 Veja [EXPLICACOES.md](EXPLICACOES.md) para decisões técnicas, tópicos 7 e 8 e transparência sobre IA.

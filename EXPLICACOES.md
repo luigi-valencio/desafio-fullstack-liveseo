@@ -42,6 +42,8 @@ O bônus `filterByNumericField<T>` preserva o tipo de cada objeto retornado. `Nu
 
 O script não é uma migração da API: o enunciado permite manter os usuários do backend em memória. A execução em MySQL é separada dos testes Node.
 
+O arquivo foi executado sem alterações em MySQL Community Server 8.4.13. A ordenação e as contagens esperadas foram confirmadas; um teste adicional verificou janeiro de 2024 e janeiro de 2025 em grupos separados. O registro está em `database/VALIDACAO_MYSQL.md`.
+
 ### 5. NestJS
 
 - `main.ts`: inicializa o Nest e abre a porta local.
