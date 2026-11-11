@@ -1,0 +1,88 @@
+/* 1. Tokens e base */
+:root {
+  color-scheme: light;
+  --canvas: #f4f6f2;
+  --ink: #172d29;
+  --muted: #53645d;
+  --green: #176449;
+  --green-dark: #104d38;
+  --line: #d8e0d8;
+  --surface: #fff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+input, button { font: inherit; }
+a { color: inherit; }
+button, input { min-width: 0; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+.skip-link { position: absolute; top: 12px; left: 12px; padding: 12px; background: var(--surface); transform: translateY(-160%); z-index: 1; }
+.skip-link:focus { transform: none; }
+
+/* 2. Estrutura da página */
+.site-header, .site-footer { width: min(1200px, 100%); margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.site-header { padding: 32px 40px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 15px; }
+.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: var(--ink); color: white; font-size: 24px; font-weight: 700; }
+.stage { color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.layout { width: min(1200px, 100%); margin: auto; padding: 48px 40px 64px; display: grid; grid-template-columns: 1fr 460px; gap: 80px; align-items: center; }
+.site-footer { padding: 24px 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+
+/* 3. Apresentação */
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .13em; color: var(--green); margin: 0 0 24px; }
+.introduction > .eyebrow { display: flex; align-items: center; gap: 8px; }
+.eyebrow > span { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
+h1 { font-size: clamp(36px, 4.1vw, 54px); line-height: 1.13; letter-spacing: -.045em; font-weight: 650; margin: 0 0 24px; }
+h1 em { color: var(--green); font-weight: 450; font-family: Georgia, serif; }
+.intro-description { max-width: 370px; font-size: 16px; line-height: 1.8; color: var(--muted); margin: 0; }
+.project-note { display: flex; align-items: center; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); max-width: 390px; }
+.note-number { font-family: Georgia, serif; font-size: 34px; color: var(--green); }
+.project-note p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.8; }
+.project-note .note-title { font-size: 13px; font-weight: 650; color: var(--ink); }
+
+/* 4. Formulário e estados */
+.form-card { padding: 36px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); box-shadow: 0 16px 48px #172d2908; }
+.form-card .eyebrow { margin-bottom: 12px; }
+h2 { font-size: 29px; letter-spacing: -.035em; margin: 0 0 10px; }
+.form-description { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0 0 28px; }
+.field { margin-bottom: 20px; }
+label { display: block; font-size: 13px; font-weight: 650; margin-bottom: 8px; }
+input { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid #a7b6ad; border-radius: 8px; color: var(--ink); background: #fff; }
+input::placeholder { color: #67776d; opacity: 1; }
+input:focus-visible { border-color: var(--green); }
+input:user-invalid { border-color: #a42828; }
+.field-hint { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 8px 0 0; }
+button { width: 100%; min-height: 48px; padding: 13px 16px; border: 0; border-radius: 8px; background: var(--green); color: white; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 650; font-size: 14px; }
+button:hover { background: var(--green-dark); }
+button:active { transform: translateY(1px); }
+button span { font-size: 20px; line-height: 1; }
+.form-status { color: var(--green-dark); font-size: 13px; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
+.form-status:not(:empty) { margin-top: 16px; padding: 12px; border-radius: 8px; background: #edf5ef; }
+.demo-note { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.demo-note strong { font-weight: 650; color: var(--ink); }
+.noscript-note { color: #8d2020; font-size: 12px; line-height: 1.6; }
+
+/* 5. Adaptação sem larguras fixas nos campos */
+@media (max-width: 950px) {
+  .layout { gap: 36px; grid-template-columns: 1fr 420px; }
+  h1 { font-size: 38px; }
+}
+@media (max-width: 760px) {
+  .site-header { padding: 24px; }
+  .layout { padding: 28px 24px 40px; grid-template-columns: minmax(0, 1fr); gap: 32px; max-width: 540px; }
+  h1 { font-size: clamp(32px, 7vw, 42px); }
+  .intro-description { font-size: 14px; }
+  .project-note { display: none; }
+  .form-card { padding: 28px; }
+  .site-footer { padding: 20px 24px; flex-wrap: wrap; font-size: 11px; }
+}
+@media (max-width: 380px) {
+  .site-header { padding: 20px 16px; flex-wrap: wrap; }
+  .layout { padding-inline: 16px; }
+  .form-card { padding: 24px 20px; }
+}
