@@ -1,12 +1,12 @@
 /* 1. Tokens e base */
 :root {
   color-scheme: light;
-  --canvas: #f4f6f2;
-  --ink: #172d29;
-  --muted: #53645d;
-  --green: #176449;
-  --green-dark: #104d38;
-  --line: #d8e0d8;
+  --canvas: #f6f6f6;
+  --ink: #171717;
+  --muted: #62646a;
+  --green: #935300;
+  --green-dark: #713e00;
+  --line: #e2e2e5;
   --surface: #fff;
   font-family: "Segoe UI", system-ui, sans-serif;
   color: var(--ink);
@@ -26,10 +26,11 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 
 /* 2. Estrutura da página */
 .site-header, .site-footer { width: min(1200px, 100%); margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-.site-header { padding: 32px 40px; }
+.site-header { width: 100%; padding: 12px max(40px, calc((100vw - 1120px) / 2)); background: #171717; color: white; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 15px; }
-.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: var(--ink); color: white; font-size: 24px; font-weight: 700; }
-.stage { color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.brand img { width: 100px; height: auto; display: block; }
+.brand > span { font-size: 12px; color: #c6c6cb; border-left: 1px solid #4b4b4b; padding-left: 16px; }
+.stage { color: #c6c6cb; font-size: 11px; letter-spacing: .08em; }
 .layout { width: min(1200px, 100%); margin: auto; padding: 48px 40px 64px; display: grid; grid-template-columns: 1fr 460px; gap: 80px; align-items: center; }
 .site-footer { padding: 24px 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
 
@@ -38,7 +39,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .introduction > .eyebrow { display: flex; align-items: center; gap: 8px; }
 .eyebrow > span { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
 h1 { font-size: clamp(36px, 4.1vw, 54px); line-height: 1.13; letter-spacing: -.045em; font-weight: 650; margin: 0 0 24px; }
-h1 em { color: var(--green); font-weight: 450; font-family: Georgia, serif; }
+h1 em { color: var(--green); font-weight: 450; font-style: normal; }
 .intro-description { max-width: 370px; font-size: 16px; line-height: 1.8; color: var(--muted); margin: 0; }
 .project-note { display: flex; align-items: center; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); max-width: 390px; }
 .note-number { font-family: Georgia, serif; font-size: 34px; color: var(--green); }
@@ -57,12 +58,12 @@ input::placeholder { color: #67776d; opacity: 1; }
 input:focus-visible { border-color: var(--green); }
 input:user-invalid { border-color: #a42828; }
 .field-hint { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 8px 0 0; }
-button { width: 100%; min-height: 48px; padding: 13px 16px; border: 0; border-radius: 8px; background: var(--green); color: white; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 650; font-size: 14px; }
-button:hover { background: var(--green-dark); }
+button { width: 100%; min-height: 48px; padding: 13px 16px; border: 0; border-radius: 8px; background: #fc9801; color: #171717; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; font-weight: 650; font-size: 14px; }
+button:hover { background: #ffad33; }
 button:active { transform: translateY(1px); }
 button span { font-size: 20px; line-height: 1; }
 .form-status { color: var(--green-dark); font-size: 13px; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
-.form-status:not(:empty) { margin-top: 16px; padding: 12px; border-radius: 8px; background: #edf5ef; }
+.form-status:not(:empty) { margin-top: 16px; padding: 12px; border-radius: 8px; background: #fff3e0; }
 .demo-note { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line); }
 .demo-note strong { font-weight: 650; color: var(--ink); }
 .noscript-note { color: #8d2020; font-size: 12px; line-height: 1.6; }
@@ -73,7 +74,7 @@ button span { font-size: 20px; line-height: 1; }
   h1 { font-size: 38px; }
 }
 @media (max-width: 760px) {
-  .site-header { padding: 24px; }
+  .site-header { padding: 16px 24px; flex-wrap: wrap; }
   .layout { padding: 28px 24px 40px; grid-template-columns: minmax(0, 1fr); gap: 32px; max-width: 540px; }
   h1 { font-size: clamp(32px, 7vw, 42px); }
   .intro-description { font-size: 14px; }

@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12"
   },
   "scripts": {
     "dev": "npm --prefix backend run start:dev",
-    "build": "npm --prefix backend run build && tsc -p exercises/typescript/tsconfig.json",
+    "build": "npm --prefix backend run build && tsc -p exercises/typescript/tsconfig.json && npm --prefix frontend run build",
     "start": "npm --prefix backend start",
     "exercise": "tsc -p exercises/typescript/tsconfig.json && node exercises/typescript/dist/demo.js",
-    "test": "npm run build && npm --prefix backend test && node --test exercises/typescript/dist/users.test.js"
+    "test": "npm run build && npm --prefix backend test && node --test exercises/typescript/dist/users.test.js && npm --prefix frontend test",
+    "dev:frontend": "npm --prefix frontend run dev"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
