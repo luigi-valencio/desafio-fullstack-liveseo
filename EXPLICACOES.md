@@ -81,8 +81,10 @@ Repetiria a medição nas mesmas condições para confirmar a melhora, sem reduz
 
 ## Uso de Ferramentas de IA
 
-**Ferramenta usada:** Codex, para planejar as três etapas, gerar código, documentação e testes e conferir as telas no navegador. A implementação teve participação direta de IA, incluindo NestJS, HTML/CSS e Vue 3.
+**Quais ferramentas de IA você usou durante este desafio (se usou)?** Codex, para planejar as três etapas, gerar código, documentação e testes e conferir as telas no navegador. A implementação teve participação direta de IA, incluindo NestJS, HTML/CSS e Vue 3.
 
-**Exemplo concreto:** a IA ajudou a separar o SQL da API em memória e a testar tarefas com o mesmo título. O uso de IDs únicos permite remover uma delas sem afetar a outra.
+**Dê um exemplo concreto de um momento em que a IA te ajudou a resolver algo, debugar um erro, ou entender um conceito novo.** a IA ajudou a separar o SQL da API em memória e a testar tarefas com o mesmo título. O uso de IDs únicos permite remover uma delas sem afetar a outra.
 
-**MCP e agentes/skills:** MCP padroniza a conexão de aplicações de IA com ferramentas e fontes de dados. Agentes executam etapas com ferramentas; skills reúnem instruções e recursos para tarefas específicas. Nesta entrega, o Codex usou ferramentas para trabalhar com arquivos, navegador e GitHub. Isso descreve o fluxo do projeto, sem atribuir experiência anterior ao candidato.
+**Você já ouviu falar em MCP (Model Context Protocol) ou em agentes/skills de IA (ex: automações com n8n, agentes customizados, CrewAI)? Se sim, o que você entende sobre isso — mesmo que de forma exploratória, sem nunca ter usado na prática.**
+
+Sim, já ouvi falar de todos. Entendo MCP como um padrão para conectar a IA a ferramentas e fontes de dados, e agentes como sistemas que executam tarefas usando esses recursos. Skills são instruções reutilizáveis; n8n organiza automações, enquanto CrewAI permite coordenar agentes. Já sobre detalhes muito técnicos, confesso que não tenho muito conhecimento, mas não possuo nenhum problema em aprender. :)
