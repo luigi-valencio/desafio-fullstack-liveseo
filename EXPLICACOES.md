@@ -87,4 +87,4 @@ Repetiria a medição nas mesmas condições para confirmar a melhora, sem reduz
 
 **Você já ouviu falar em MCP (Model Context Protocol) ou em agentes/skills de IA (ex: automações com n8n, agentes customizados, CrewAI)? Se sim, o que você entende sobre isso — mesmo que de forma exploratória, sem nunca ter usado na prática.**
 
-Sim, já ouvi falar de todos. Entendo MCP como um padrão para conectar a IA a ferramentas e fontes de dados, e agentes como sistemas que executam tarefas usando esses recursos. Skills são instruções reutilizáveis; n8n organiza automações, enquanto CrewAI permite coordenar agentes. Já sobre detalhes muito técnicos, confesso que não tenho muito conhecimento, mas não possuo nenhum problema em aprender. :)
+Sim, já ouvi falar de todos. Entendo MCP como um padrão para conectar a IA a ferramentas e fontes de dados, e agentes como sistemas que executam tarefas usando esses recursos. Skills são instruções reutilizáveis; n8n organiza automações, enquanto CrewAI permite coordenar agentes. Ainda estou aprofundando os detalhes técnicos e tenho disposição para aprender.
